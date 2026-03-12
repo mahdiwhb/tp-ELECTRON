@@ -31,6 +31,14 @@ cd /Users/mahdi/Downloads/tp-noter
 npm start
 ```
 
+## Build (optionnel)
+
+Le prof ne demande pas de rendre un build `dist` pour ce TP.
+Si besoin (pour partager l'app), on peut generer un build localement.
+Commande d'installation outil build : `npm install --save-dev electron-builder`
+Commande de build : `npx electron-builder`
+Le resultat sera cree dans un dossier `dist/`.
+
 ## Barème du TP - Couverture complete
 
 | Code | Fonctionnalite demandee | Statut |
