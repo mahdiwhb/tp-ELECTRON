@@ -1,0 +1,18 @@
+{
+  "name": "tp-noter",
+  "version": "1.0.0",
+  "description": "Bloc-notes Electron - TP",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "electron": "^41.0.0",
+    "electron-store": "^11.0.2"
+  }
+}

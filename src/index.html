@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloc-Notes</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="toolbar">
+        <div class="left-actions">
+          <button id="newBtn" type="button">Nouveau</button>
+          <button id="openBtn" type="button">Ouvrir</button>
+          <button id="saveBtn" type="button">Sauvegarder</button>
+        </div>
+        <div class="right-actions">
+          <span id="charCount">0 caractere</span>
+          <button id="themeBtn" type="button">Theme</button>
+        </div>
+      </header>
+
+      <main class="editor-wrap">
+        <textarea id="editor" spellcheck="false" placeholder="Commencez a ecrire..."></textarea>
+      </main>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>

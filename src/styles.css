@@ -1,0 +1,133 @@
+:root {
+  --bg: #14181d;
+  --panel: #1d232a;
+  --panel-2: #202831;
+  --text: #eaf3ff;
+  --muted: #9bb1c9;
+  --accent: #f4a259;
+  --accent-text: #271400;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+body.light {
+  --bg: #f3efe6;
+  --panel: #fffaf2;
+  --panel-2: #f8f1e6;
+  --text: #2a241a;
+  --muted: #6a5b45;
+  --accent: #117a65;
+  --accent-text: #ecfff9;
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow: rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(244, 162, 89, 0.2), transparent 40%),
+    radial-gradient(circle at 100% 80%, rgba(17, 122, 101, 0.25), transparent 35%),
+    var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  padding: 12px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: linear-gradient(120deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.left-actions,
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button {
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--panel-2), var(--accent) 14%);
+}
+
+#saveBtn,
+#themeBtn {
+  border-color: color-mix(in srgb, var(--accent), white 30%);
+}
+
+#charCount {
+  color: var(--muted);
+  min-width: 140px;
+  text-align: right;
+}
+
+.editor-wrap {
+  min-height: 0;
+}
+
+#editor {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  background: color-mix(in srgb, var(--panel), black 8%);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  outline: none;
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+#editor::placeholder {
+  color: color-mix(in srgb, var(--muted), white 20%);
+}
+
+@media (max-width: 680px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .left-actions,
+  .right-actions {
+    justify-content: space-between;
+  }
+
+  #charCount {
+    text-align: left;
+    min-width: auto;
+  }
+}
