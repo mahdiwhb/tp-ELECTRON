@@ -29,7 +29,7 @@ async function markDirty(nextDirty) {
 
 function applyTheme(theme) {
   document.body.classList.toggle('light', theme === 'light');
-  themeBtn.textContent = theme === 'light' ? 'Theme sombre' : 'Theme clair';
+  themeBtn.textContent = theme === 'light' ? '\u263D Sombre' : '\u2600 Clair';
 }
 
 async function openFileAction() {
@@ -125,6 +125,13 @@ window.__notepadSaveBeforeClose = async () => {
 async function initialize() {
   const themeResult = await window.noterAPI.getTheme();
   applyTheme(themeResult.theme);
+
+  const brandDateEl = document.getElementById('brandDate');
+  if (brandDateEl) {
+    brandDateEl.textContent = new Date().toLocaleDateString('fr-FR', {
+      weekday: 'long', day: 'numeric', month: 'long',
+    });
+  }
 
   refreshCharCount();
   await markDirty(false);

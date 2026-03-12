@@ -3,25 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;" />
     <title>Bloc-Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+
+    <!-- Atmosphere layers -->
+    <div class="desk-cloth" aria-hidden="true"></div>
+    <div class="vignette"   aria-hidden="true"></div>
+    <div class="ruled-bg"   aria-hidden="true"></div>
+    <div class="watermark"  aria-hidden="true">Bloc&#8209;Notes</div>
+
     <div class="app-shell">
       <header class="toolbar">
-        <div class="left-actions">
-          <button id="newBtn" type="button">Nouveau</button>
-          <button id="openBtn" type="button">Ouvrir</button>
-          <button id="saveBtn" type="button">Sauvegarder</button>
+
+        <div class="brand-block">
+          <span class="brand-seal" aria-hidden="true">✦</span>
+          <div class="brand-text">
+            <p class="brand-kicker">Carnet personnel</p>
+            <h1 class="brand-title">Bloc-Notes</h1>
+          </div>
+          <span class="brand-date" id="brandDate"></span>
         </div>
+
+        <nav class="left-actions" aria-label="Actions sur le fichier">
+          <button id="newBtn"  type="button">&#9671; Nouveau</button>
+          <button id="openBtn" type="button">&#8962; Ouvrir</button>
+          <button id="saveBtn" type="button">&#10022; Sauvegarder</button>
+        </nav>
+
         <div class="right-actions">
-          <span id="charCount">0 caractere</span>
-          <button id="themeBtn" type="button">Theme</button>
+          <span id="charCount" class="count-pill">0 caractere</span>
+          <button id="themeBtn" type="button">&#9728; Clair</button>
         </div>
+
       </header>
 
-      <main class="editor-wrap">
-        <textarea id="editor" spellcheck="false" placeholder="Commencez a ecrire..."></textarea>
+      <main class="editor-frame">
+        <div class="margin-line" aria-hidden="true"></div>
+        <textarea
+          id="editor"
+          spellcheck="false"
+          placeholder="Commencez a ecrire..."
+          aria-label="Zone d'edition principale"
+        ></textarea>
       </main>
     </div>
 
