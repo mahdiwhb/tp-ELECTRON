@@ -31,13 +31,13 @@ cd /Users/mahdi/Downloads/tp-noter
 npm start
 ```
 
-## Build (optionnel)
+## Build
 
-Le prof ne demande pas de rendre un build `dist` pour ce TP.
-Si besoin (pour partager l'app), on peut generer un build localement.
-Commande d'installation outil build : `npm install --save-dev electron-builder`
-Commande de build : `npx electron-builder`
-Le resultat sera cree dans un dossier `dist/`.
+Le build est genere avec electron-builder.
+Installation (une seule fois) : `npm install`.
+Build macOS : `npm run build:mac` (equivalent a `npx electron-builder --mac`).
+Build multi-plateforme (si necessaire) : `npm run build`.
+Les fichiers de sortie sont crees dans le dossier `dist/`.
 
 ## Barème du TP - Couverture complete
 
